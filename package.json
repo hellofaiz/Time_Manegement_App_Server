@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
-    "generate": "ts-node --transpile-only src/schema.ts",
-    "migrate:deploy": "prisma migrate deploy",
-    "build": "prisma migrate deploy && prisma generate && npm run generate && tsc",
+    "prisma:generate": "npx prisma generate",
+    "prestart": "npm run prisma:generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
